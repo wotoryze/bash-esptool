@@ -89,6 +89,7 @@ echo "║ 4. Merge Firmware ║"
 echo "╚═══════════════════╝"
 echo ""
 read -p "Choose: " func
+echo ""
 case $func in
 "1" )
   writeF
