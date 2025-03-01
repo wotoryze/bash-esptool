@@ -48,6 +48,7 @@ eraseF() {
   read -p "Port: " port
   read -p "Baud rate: " baud
   esptool.py -p "$port" -b "$baud" erase_flash || esptool -p "$port" -b "$baud" erase_flash || toolerr
+  echo "Done"
 }
 
 readF() {
@@ -56,6 +57,7 @@ readF() {
   read -p "Exit firmware name: " firmware
   read -p "Baud rate: " baud
   esptool.py -p "$port" -b "$baud" read_flash 0 ALL "$firmware" || esptool -p "$port" -b "$baud" read_flash 0 ALL "$firmware" || toolerr
+  echo "Done"
 }
 
 mergeF() {
@@ -73,6 +75,7 @@ mergeF() {
     command+=$sector" "$file" "
   done
   esptool.py $command || esptool $command || toolerr
+  echo "Done"
 }
 
 
